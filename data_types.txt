@@ -1,0 +1,36 @@
+char represents 8 bits 
+with an 8 bit char we can represent 2^8 different things, 2 representing 0s and 1s. 
+char16_t : 16 bits
+chat32_t: 32 bits 
+
+signed integer takes on negative and positive values and one of the bits decides if it is - or +
+a 256 different values on a signed integer will start from -127 to +127 
+a 256 different values on an UNSIGNED integer will start from 0 to 256 
+
+Basic float is 32 bits; double is 64 bits and long double is 116 bytes, 
+taking it more memory but providing more precicion.
+We can use the siteof operator to find out the size of different character types
+
+NOTE: to create an object, we need to call the constructor.
+
+1. We are first looking at the types of data in the dataset to represent. We are first looking
+at representing numbers. We have decided to use double instead of float. This is for price and amount.
+This decision has been made as we are dealing with financial data and precision matters a lot. with
+float, we may not have much precicion as due to lots of multiplication as the result of operations, 
+we may lose precicion. So, we would better go with double if dealing with financial data. 
+
+2. Strings, as datatypes, are actually classes. We use strings to represent timestamp, string to represent 
+product (BTC/DOGE) and we have decided to use enum class ( a mini namespace) to represent orderType as it can 
+take a limited number of values just as bid, ask, etc. 
+
+NOTE: this is best to put ecum classes in the header files. 
+
+3. Now, we need to represent more than one order book entry, which comes in the row format. This is done via
+using a vector, which is part of the standard library. 
+
+NOTE: a vector can ONLY store one data type; each datatype needing its own vector. 
+
+4. we pushback data into the vectors. 
+
+NOTE: a class is a way of organizing data and functions that are related to each other into one collection of data
+
